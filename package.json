@@ -1,8 +1,10 @@
 {
   "name": "cryptolegacy",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "scripts": {
+    "build": "webpack --display-error-details",
+    "clean": "rm -r public/index.js public/index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -10,7 +12,7 @@
     "url": "git+https://github.com/saturnin13/cryptolegacy.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Saturnin Pugnet",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/saturnin13/cryptolegacy/issues"
@@ -24,8 +26,8 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.9",
     "json-loader": "^0.5.7",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
     "style-loader": "^0.20.1",
     "truffle": "^4.0.6",
     "web3": "^0.20.5",
