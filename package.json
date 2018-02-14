@@ -7,10 +7,7 @@
     "clean": "rm -r public/index.js public/index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saturnin13/cryptolegacy.git"
-  },
+  "repository": "git+https://github.com/saturnin13/cryptolegacy.git",
   "keywords": [],
   "author": "Saturnin Pugnet",
   "license": "ISC",
@@ -26,13 +23,17 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.9",
     "json-loader": "^0.5.7",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
     "truffle": "^4.0.6",
     "web3": "^0.20.5",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
   "description": ""
 }
