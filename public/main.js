@@ -982,7 +982,6 @@ $(document).ready(function () {
 });
 
 function init() {
-    alert("in the init");
     if (window.goSamples) goSamples(); // init for these samples -- you don't need to call this
     var $ = go.GraphObject.make; // for conciseness in defining templates
 
