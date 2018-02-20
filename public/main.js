@@ -959,7 +959,7 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
-    alert("12345");
+    alert("122345");
 
     // Check if has valid web3 application
     if (!contractManager.validateWeb3()) {
