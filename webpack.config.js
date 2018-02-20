@@ -1,25 +1,45 @@
-const path = require('path')
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const JS_PATH = './src/js/';
+const SCSS_PATH = './src/scss/';
+
+let entry = {
+    main: ['./src/js/main.js', './src/scss/main.scss']
+};
+
 module.exports = {
-    entry: path.join(__dirname, 'src/js', 'index.js'), // Our frontend will be inside the src folder
+    entry: entry,
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'build.js' // The final file will be created in dist/build.js
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'public')
     },
     module: {
-        loaders: [{
-            test: /\.css$/, // To load the css in react
-            use: ['style-loader', 'css-loader'],
-            include: /src/
-        }, {
-            test: /\.jsx?$/, // To load the js and jsx files
-            loader: 'babel-loader',
-            exclude: /node_modules/,
-            query: {
-                presets: ['es2015', 'react', 'stage-2']
+        rules: [
+            {
+                test: /\.jsx?/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    use: [{
+                        loader: "css-loader" // translates CSS into CommonJS
+                    }, {
+                        loader: "sass-loader" // compiles Sass to CSS
+                    }],
+                    // use style-loader in development
+                    fallback: "style-loader"
+                })
+            },
+            {
+                test: /\.json$/, // To load the json files
+                loader: 'json-loader'
             }
-        }, {
-            test: /\.json$/, // To load the json files
-            loader: 'json-loader'
-        }]
-    }
-}
+        ]
+    },
+    plugins: [
+        new ExtractTextPlugin("[name].css")
+    ]
+};
