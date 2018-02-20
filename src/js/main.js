@@ -28,7 +28,7 @@ function init() {
     if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
     var $ = go.GraphObject.make;  // for conciseness in defining templates
 
-    myDiagram =
+    var myDiagram =
         $(go.Diagram, "myDiagramDiv",  // must be the ID or reference to div
             {
                 "toolManager.hoverDelay": 100,  // 100 milliseconds instead of the default 850
